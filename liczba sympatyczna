@@ -1,0 +1,19 @@
+def sympatyczna(n):
+	lista = [int(d) for d in str(n)]
+	sym = []
+	for cyfra in range(1,len(lista)):
+		if  lista[cyfra - 1] < lista[cyfra]:
+			sym.append(lista[cyfra - 1])
+		else: return len(sym) == len(lista) - 1
+	return len(sym) == len(lista) - 1
+#print(sympatyczna(input("podaj liczbę do sprawdzenia ")))
+a = int(input("podaj początek zakresu "))
+b = int(input("podaj koniec zakresu ")) 
+zakres = []
+while a <= b:
+	if sympatyczna(a):
+		zakres.append(a)
+		a += 1
+	else:
+		a += 1
+print(zakres)
