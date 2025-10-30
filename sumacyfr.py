@@ -4,8 +4,9 @@ def pseudobin(n):
     for element in lista:
         if element == 1 or element == 0:
             spr.append(element)
-    return bool(len(spr) == len(lista))
+    return len(spr) == len(lista)
 #print(pseudobin(int(input("podaj liczbę do sprawdzenia "))))
 b = int(input("podaj koniec zakresu "))
 wyniki = [int(liczba) for liczba in range(1,b) if pseudobin(liczba)]
 print(wyniki)
+
