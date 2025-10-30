@@ -1,0 +1,15 @@
+def rozbicie(n):
+	lista = [int(d) for d in str(n)]
+	return lista
+def czy_pierwsza(a):
+	ls = [int(x) for x in range(1,a+1) if a % x == 0]
+	return len(ls) == 2 
+liczba1 = (int(input("podaj pierwszą liczbę ")))
+liczba2 = (int(input("podaj drugą liczbę ")))
+if czy_pierwsza(liczba1) and czy_pierwsza(liczba2):
+	if rozbicie(liczba1)[::-1] == rozbicie(liczba2):
+		print("liczby te są lustrzanie pierwsze")
+	else:
+		print("liczby te nie są lustrzanie pierwsze")
+else:
+	print("niepoprawne dane, obie podane liczby muszą być pierwsze")
