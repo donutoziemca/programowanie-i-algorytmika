@@ -1,9 +1,20 @@
 def NWD(a,b):
-	while b != 0:
-		a, b = a, a % b
-	return abs(a)
+	while b !=  a:
+		if b > a:
+			b -= a
+		else: 
+			a -= b
+	return a
 def NWW(a,b):
-	if a == 0 or b == 0:
-		return 0
-	return abs(a*b) // NWD(a,b)
-print(NWW(12, 40))
+	return int((a*b)/NWD(a,b))
+
+a ,b = int(input("podaj a: ")), int(input("podaj b: "))
+c, d = int(input("podaj c: ")), int(input("podaj d: "))
+tmp = NWW(b,d)
+print(tmp)
+a = (tmp/b)*a
+b = tmp
+c = (tmp/d)*c
+d = tmp
+print(a, " / ", b)
+print(c, " / ", d)
