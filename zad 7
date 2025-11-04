@@ -1,0 +1,17 @@
+def NWD(a,b):
+	while b !=  a:
+		if b > a:
+			b -= a
+		else: 
+			a -= b
+	return a
+def NWW(a,b):
+	return int((a*b)/NWD(a,b))
+
+
+n = 4
+zm = int(input("podaj liczbę: "))
+for liczba in range(n - 1):
+	a = int(input("podaj liczbę: "))
+	zm = NWD(a,zm) 
+print(zm)
