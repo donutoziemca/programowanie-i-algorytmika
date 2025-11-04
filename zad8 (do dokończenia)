@@ -1,0 +1,22 @@
+def NWD(a,b):
+	while b !=  a:
+		if b > a:
+			b -= a
+		else: 
+			a -= b
+	return a
+def NWW(a,b):
+	return int((a*b)/NWD(a,b))
+
+w = [(0, 7), (7,0), (7,-3), (-3,-3), (-3, 0)]
+n = len(w)
+#for i in range(n -1):
+#	print(f"P1 = {[i]}, P2 = {w[i+1]}")
+#print(f"P1 = {[-1]}, P2 = {w[0]}")
+
+P1 = w[0]
+for P2 in w:
+	print(f"P1 = {P1}, P2 - {P2}")
+	P1 = P2
+P2 = w[0]
+print(f"P1 = {P1}, P2 - {P2}")
