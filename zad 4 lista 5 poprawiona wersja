@@ -1,0 +1,6 @@
+#Zakładam że w ostatnim wierszu pliku dane.txt został użyty enter
+with open("dane.txt", 'r', encoding="utf-8") as dane, open("testuj.txt" , 'w') as t:
+	lista = dane.readlines()
+	lista = set(lista)
+	for n in lista:
+		t.write(str(n))
