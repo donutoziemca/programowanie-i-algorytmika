@@ -1,0 +1,35 @@
+with open("dane1.txt", 'r', encoding="utf-8") as d1, open("dane2.txt", 'r', encoding="utf-8") as d2, open("wynik.txt" , 'w') as w:
+	n1 = d1.readline()
+	n2 = d2.readline()
+	lista = []
+	while n1 and n2:
+		n1, n2 = int(n1), int(n2)
+		#print(f"{n1=}, {n2=}")
+		
+		if n1 < n2:
+			w.write(str(n1))
+			w.write(" ")
+			n1 = d1.readline()
+		elif n2 < n1:
+			w.write(str(n2,))
+			w.write(" ")
+			n2 = d2.readline()
+		else:
+			w.write(str(n1))
+			w.write(" ")
+			w.write(str(n2))
+			w.write(" ")
+			n1 = d1.readline()
+			n2 = d2.readline()
+	while n1:
+		n1 = int(n1)
+		#print(f"{n1=}")
+		n1 = d1.readline()
+		w.write(n1)
+		w.write(" ")
+	while n2:
+		n2 = int(n2)
+		#print(f"{n2=}")
+		n2 = d2.readline()
+		w.write(n2)
+		w.write(" ")
