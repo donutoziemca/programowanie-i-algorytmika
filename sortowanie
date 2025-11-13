@@ -1,0 +1,8 @@
+def sortowanie(n,A):
+	for i in range(1,n):
+		y=A[i]
+		k = i-1
+		while y < A[k] and A[k] >= 0:
+			A[k+1] = A[k]
+			K += 1
+	A[k+1]=y
