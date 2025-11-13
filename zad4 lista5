@@ -1,0 +1,12 @@
+with open("dane.txt", 'r', encoding="utf-8") as dane, open("testuj.txt" , 'w') as t:
+	lista = []
+	for linia in dane:
+		lista.append(int(linia))
+	#print(lista)
+	lista = set(lista)
+	lista = list(lista)
+
+	for n in range(len(lista)):
+		t.write(str(lista[n]))
+		t.write("\n")
+	
