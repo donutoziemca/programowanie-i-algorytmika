@@ -1,0 +1,33 @@
+def row(a,b):
+	if a > b:
+		return 1
+	if a < b:
+		return 2
+	else:
+		return 3
+l1 = []
+l2 = []
+g1 = 0
+g2 = 0
+with open("gracz1.txt", 'r', encoding="utf-8") as gracz1, open("gracz2.txt", 'r', encoding="utf-8") as gracz2:  
+    
+	for el in gracz1:
+		l1.append(int(el))
+	for el in gracz2:
+		l2.append(int(el))
+print(l1)
+print(l2)
+for n in range(len(l1)):
+	if row(l1[n],l2[n]) == 1:
+		g1 += 1
+	elif row(l1[n],l2[n]) == 2:
+		g2 += 1
+	else:
+		g1 += 1
+		g2 += 2
+if g1 > g2:
+	print("Gracz1 wygrał!")
+elif g2 < g1:
+	print("Gracz2 Wygrał!")
+else:
+	print("Remis!")
