@@ -1,0 +1,19 @@
+def czy_zenskie(i):
+	return i[-1] == "a"
+
+with open("imiona.txt", 'r', encoding = "utf-8") as plik:
+	for linia in plik:
+		lista = linia.strip().split()
+print(lista)
+iz, im = 0, 0
+with open("panie.txt", 'w') as panie, open("panowie.txt", 'w') as panowie:
+	for element in lista:
+		if czy_zenskie(element):
+			panie.write(element + ", ")
+			iz += 1
+		else:
+			panowie.write(element + ", ")
+			im += 1
+	panie.write("\n" + str(iz))
+	panowie.write("\n" + str(im))
+
