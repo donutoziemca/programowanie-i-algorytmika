@@ -3,4 +3,4 @@ def f(n,a,b):
 		return a
 	if n == 1:
 		return b
-	return fib(n-1,a,b) + fib(n-2,a,b)
+	return f(n-1,a,b) + f(n-2,a,b)
