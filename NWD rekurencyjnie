@@ -1,0 +1,7 @@
+def NWD(a,b):
+	if b == 0 and a != 0:
+		return a
+	if a == 0 and b != 0:
+		return b
+	return NWD(b, a%b)
+print(NWD(0, 15), NWD(3,0), NWD(25,80), NWD(12,4))
