@@ -1,0 +1,13 @@
+with open("tekst.txt",'r') as t:
+    a = str()
+    k = []
+    k = t.readlines()
+    print(k)
+    for line in k:
+        a += line
+    p = "nie"
+    q = "tak"
+    b = a.replace(p,q)
+    print(b)
+with open("tekst.txt", 'w') as tekst:
+    tekst.write(b)
