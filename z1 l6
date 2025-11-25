@@ -1,0 +1,6 @@
+def rek(n,k):
+    if n>0:
+        rek(n//k,k)
+        print(n%k)
+      
+rek(234,8)
