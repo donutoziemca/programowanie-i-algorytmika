@@ -1,0 +1,7 @@
+def pot_rek(n,k):
+    if k == 1:
+        return n
+    if k%2 == 0:
+        return pot_rek(n, k//2)*pot_rek(n, k//2)
+    return pot_rek(n, k//2)*pot_rek(n, k//2)*n
+print( pot_rek(3,5), pot_rek(11,3), pot_rek(5,3))
