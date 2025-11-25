@@ -1,0 +1,12 @@
+def silniait(n):
+
+	a = 1
+	for i in range(1,n+1):
+		a = a*i
+	return a
+print(silniait(1),silniait(4),silniait(6))
+def silniarek(n):
+	if n == 1:
+		return 1
+	return n*silniarek(n-1)
+print(silniarek(1),silniarek(4),silniarek(6))
