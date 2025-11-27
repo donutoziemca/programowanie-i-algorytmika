@@ -1,0 +1,19 @@
+from random import randint
+n = int(input("podaj liczbę elementów listy: "))
+a = int(input("podaj dolną granicę zakresu: "))
+b = int(input("podaj górną granicę zakresu: "))
+lista = [randint(a,b) for i in range(n)]
+print(lista)
+i = 0
+while i < len(lista):
+    c = lista[i]
+    d = lista[i+1]
+    if c > d:
+        
+        lista[i+1],lista[i] = c,d
+    i+=2
+print(lista)
+np = lista[::2]
+p = lista[1::2]
+print(min(np))
+print(max(p))
