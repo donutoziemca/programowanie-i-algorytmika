@@ -1,0 +1,36 @@
+from random import randint
+def MinMaxRek(i,j):
+  #print("Podlista",i,"",j) 
+  if i == j: 
+    Min,Max=i,j
+    #print(x[Min],x[Max])  
+  else: 
+    if i+1 == j: 
+      if x[i] >= x[j]:
+        Min,Max=j,i
+      else:
+        Min,Max=i,j
+      #print(x[Min],x[Max])    
+    else:
+      k=(i+j) // 2
+      min1,max1=MinMaxRek(i,k)
+      min2,max2=MinMaxRek(k+1,j)
+      if x[min1] <= x[min2]:
+        Min=min1
+      else:
+        Min=min2
+      #print(x[Min])  
+      if x[max1] >= x[max2]:
+        Max=max1
+      else:
+        Max=max2
+      #print(x[Max])  
+  return Min,Max
+n = int(input("podaj liczbę elementów listy: "))
+a = int(input("podaj dolną granicę zakresu: "))
+b = int(input("podaj górną granicę zakresu: "))
+x = [randint(a,b) for i in range(n)]
+print(x)
+print(MinMaxRek(0,len(x)-1))
+wynik = MinMaxRek(0,len(x)-1)
+print("wartości najmniejsza i największa to:", x[wynik[0]], x[wynik[1]])
