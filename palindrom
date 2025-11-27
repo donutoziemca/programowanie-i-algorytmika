@@ -1,0 +1,8 @@
+slowo = "kajak"
+stos = [i for i in slowo]
+kolejka = [i for i in slowo]
+zs = stos.pop()
+zk = kolejka.pop(0)
+print(zs, zk)
+print(stos)
+print(kolejka)
