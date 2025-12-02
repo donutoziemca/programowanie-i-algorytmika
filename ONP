@@ -1,0 +1,22 @@
+dane = [2, 7 , "+", 3, "/", 14, 3, "-", 4, "*", "-", 2, "/"]
+stos = []
+for i in dane:
+	if i == "+":
+		a = stos.pop()
+		b = stos.pop()
+		stos.append(b+a)
+	elif i == "-":
+		a = stos.pop()
+		b = stos.pop()
+		stos.append(b-a)
+	elif i == "*":
+		a = stos.pop()
+		b = stos.pop()
+		stos.append(b*a)
+	elif i == "/":
+		a = stos.pop()
+		b = stos.pop()
+		stos.append(b/a)
+	else:
+		stos.append(i)
+print(stos)
