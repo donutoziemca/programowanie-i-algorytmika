@@ -1,0 +1,15 @@
+from random import random
+from math import sqrt
+n = 10000000
+tak = 0
+a = 0
+b = 0
+print(a,b)
+for i in range(n):
+	a = random()
+	b = random()
+	if sqrt(a*a + b*b) <= 1:
+		tak += 1
+print(tak)
+wynik = (tak*4)/n
+print(wynik)
