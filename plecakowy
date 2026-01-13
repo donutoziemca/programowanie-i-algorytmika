@@ -1,0 +1,7 @@
+w = 1
+produkty = [[0.5,20],[0.3,5],[0.2,8],[0.5,4],[0.1,5]]
+st = [float(produkty[i][0])/float(produkty[i][1]) for i in range(len(produkty))]
+print(st,max(st))
+print(st.index(max(st)))
+while w >= 1:
+	break
