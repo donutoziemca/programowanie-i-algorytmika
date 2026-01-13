@@ -1,0 +1,19 @@
+from random import randint
+n = randint(6,20)
+k = 300
+kw = [randint(40,220) for i in range(n)]
+kw.sort()
+print(n,k,kw)
+kajak = 0
+while len(kw) >= 2:
+	if kw[0] + kw[-1] <= k:
+		kajak += 1
+		kw.pop()
+		kw.pop(0)
+	else:
+		kajak += 1
+		kw.pop()
+if len(kw) == 1:
+	kajak == 1
+	kw.pop()
+print(kajak,kw)
