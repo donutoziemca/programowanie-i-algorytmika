@@ -1,18 +1,16 @@
-from random import randrange
 def f(x):
-	return x**3
-eps = 0.1
-r = 1
+	return (x**3)-6
+print(f(3))
+eps = 0.01
 a = -5
-b = 8
+b = 12
 srodek = (a+b)/2
-print(srodek)
-while eps < r:
-	x = srodek
-	if f(srodek)*f(a)>0:
-		srodek = (a+srodek)/2
-		r = abs(x-srodek)
+x = 1
+while abs(srodek-x) > eps:
+	if f(srodek)*f(a) < 0:
+		x = srodek
+		b = srodek
 	else:
-		srodek = (b+srodek)/2
-		r = abs(x-srodek)
-print(srodek,r)
+		a = srodek
+	srodek = (a+b)/2
+print(a,b,srodek)
