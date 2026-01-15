@@ -1,0 +1,25 @@
+def hetmany(n):
+	h = [-1 for i in range(n)]
+	def sprawdz(het, idx):
+		if idx == n:
+			print(het)
+			return
+		
+		for i in range(n):
+			h = het[:]
+			szach = False
+			for k in h[:idx]:
+				if k == i:
+					szach = True
+			if szach:
+				continue
+			for ki in range(idx):
+				k = h[ki]
+				if abs(idx-ki) == abs(i-k):
+					szach = True
+			if szach:
+				continue
+			
+			h[idx] = i
+			sprawdz(h, idx +1)
+print(hetmany(8))
