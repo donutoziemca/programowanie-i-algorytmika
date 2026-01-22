@@ -1,0 +1,16 @@
+def det(p,q,r):
+	xp, yp = p
+	xq, yq = q
+	xr, yr = r
+	return xr*(yp - yq) - xq*(yp - yr) + xp*(yq - yr)
+def sgn(a):
+	if a > 0:
+		return 1
+	if a < 0:
+		return -1
+	return 0
+p = (1,1)
+q = (10,1)
+r = (6,5)
+print(det(p,q,r))
+print(sgn(det(p,q,r)))
