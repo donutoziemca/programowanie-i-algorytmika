@@ -1,0 +1,31 @@
+def det(p,q,r):
+	xp, yp = p
+	xq, yq = q
+	xr, yr = r
+	return xr*(yp - yq) - xq*(yp - yr) + xp*(yq - yr)
+def sgn(a):
+	if a > 0:
+		return 1
+	if a < 0:
+		return -1
+	return 0
+p = (1,4)
+q = (10,1)
+r = (6,5)
+xp, yp = p
+xq, yq = q
+xr, yr = r
+print(det(p,q,r))
+print(sgn(det(p,q,r)))
+x=(sgn(det(p,q,r)))
+if xp <= xr <= xq and yp <= yr <= yq and x == 0:
+	print("punkt należy do odcinka")
+else:
+	print("punkt nie należy do odcinka")
+
+if det(p,q,r) > 0:
+	print("po lewej")
+elif det(p,q,r) == 0:
+	print("współliniowy")
+else:
+	print("po prawej")
