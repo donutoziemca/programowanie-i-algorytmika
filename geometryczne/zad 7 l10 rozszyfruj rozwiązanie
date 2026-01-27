@@ -1,0 +1,60 @@
+def det(p,q,r):
+	xp, yp = p
+	xq, yq = q
+	xr, yr = r
+	return xr*(yp - yq) - xq*(yp - yr) + xp*(yq - yr)
+def sgn(a):
+	if a > 0:
+		return 1
+	if a < 0:
+		return -1
+	return 0
+s = (0,3)
+r = (0,-4)
+p = (-4,0)
+q = (4,0)
+B = (1,0)
+A = (0,1)
+C = (0,-2)
+xp, yp = p
+xq, yq = q
+xr, yr = r
+x=(sgn(det(p,q,r)))
+sgn(det(p,q,r)) == sgn(det(p,q,s)) and sgn(det(r,s,p)) == sgn(det(r,s,p)) == sgn(det(r,s,q))
+def punkt(p,q,r):
+	x=(sgn(det(p,q,r)))
+	xp, yp = p
+	xq, yq = q
+	xr, yr = r
+	return xp <= xr <= xq and yp <= yr <= yq and x == 0
+def strona(p,q,s,a):
+	return sgn(det(p,q,a)) == sgn(det(q,s,a)) == sgn(det(s,p,a))
+def tr(p,q,s,a):
+	if strona(p,q,s,a):
+		return True
+	if punkt(p,q,a):
+		return True
+	if punkt(q,s,a):
+		return True
+	if punkt(s,p,a):
+		return True
+	return False
+#print(tr(p,q,s,A),tr(p,q,s,B),tr(p,q,s,C))
+W = [(-1,4),(-4,0),(-3,3),(2,-3),(4,0),(4,3)]
+v = (-1,4)
+t = []
+for i in range(2,len(W)):
+	t.append((v,W[i-1],W[i]))
+for element in t:
+	print(element)
+a = (0,0)
+for p,q,s in t:
+	if tr(p,q,s,a):
+		print(True)
+		break
+else:
+	print(False)
+#chuj wie co tu sie dzieje
+
+
+
