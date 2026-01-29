@@ -1,0 +1,34 @@
+#kajzereczki, paróweczki i czteropak
+def det(p,q,r):
+	xp, yp = p
+	xq, yq = q
+	xr, yr = r
+	return xr*(yp - yq) - xq*(yp - yr) + xp*(yq - yr)
+def alfa(p):
+  xp, yp = p
+  dp = abs(xp) + abs(yp)
+  if yp >= 0 and xp >= 0:
+    return yp/dp
+  if xp <= 0 and yp >= 0:
+    return 2 - yp/dp
+  if xp <= 0 and yp <= 0:
+    return 2 + abs(yp)/dp
+  if xp >= 0 and yp <= 0:
+    return 4 - abs(yp)/dp
+def yx(punkt):
+	return punkt[1],punkt[0]
+lista =[(4,5),(2,3),(1,1),(1,-1),(2,-4),(-2,-4),(-4,-2),(-4,-2),(3,1),(-1,2),(-3,4)]
+dane = sorted(lista,key = yx)
+print(dane)
+p0 = dane.pop(0)
+nowe = [(p[0]-p0[0],p[1]-p0[1]) for p in dane]
+print(nowe)
+nowe = sorted(nowe, key = alfa)
+stos = [(0,0),nowe[0],nowe[1]]
+print(stos)
+for i in range(2,len(nowe)):
+	while det(stos[-2],stos[-1],nowe[i]) <= 0:
+		stos.pop()
+		print("tak")
+	stos.append(nowe[i])
+print(stos)
